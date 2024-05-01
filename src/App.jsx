@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import { SocketContext, socketInstance } from "./socketIO/socket.context";
 import Welcome from "./pages/Welcome/Welcome";
+import Profile from "./pages/Profile/Profile";
 import Layout from "./pages/Layout/Layout";
 
 function App() {
@@ -27,6 +28,11 @@ function App() {
               <Route exact path="/home">
                 <Layout>
                   <Welcome />
+                </Layout>
+              </Route>
+              <Route exact path="/profile">
+              <Layout>
+                  <Profile />
                 </Layout>
               </Route>
             </Switch>

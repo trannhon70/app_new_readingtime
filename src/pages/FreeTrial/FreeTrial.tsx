@@ -8,22 +8,32 @@ import { Transitions } from "./../../components/Transition";
 import { Link } from "react-router-dom";
 interface FreeTrialProps {}
 
-type FreeTrialInput = {
+export interface IForm {
   email: string;
   password: string;
-};
+  confirmPassword: string;
+  userName: string;
+  countryName: string;
+  startDate: string;
+  phone: string;
+  age: string;
+  bookType: string;
+  hopeDay: string;
+  timeTableId: string;
+}
 
-const FreeTrial: FC<FreeTrialProps> = () => {
+const FreeTrial: FC<IForm> = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FreeTrialInput>();
+  } = useForm<IForm>();
+
   const [tabs, setTabs] = useState<number>(0);
   const [countries, setCountries] = useState<CountriesType[]>([]);
   const [timeSlots, setTimeSlots] = useState<TimeslotsType[]>([]);
 
-  const onSubmit: SubmitHandler<FreeTrialInput> = (dataset) => {};
+  const onSubmit: SubmitHandler<IForm> = (dataset) => {};
 
   useEffect(() => {
     const fetch = async () => {
@@ -57,6 +67,7 @@ const FreeTrial: FC<FreeTrialProps> = () => {
                       type="text"
                       className={errors.email ? "error-input" : ""}
                       placeholder="Nhập tên học sinh"
+                      {...register("email")}
                     />
                   </div>
 
@@ -66,6 +77,7 @@ const FreeTrial: FC<FreeTrialProps> = () => {
                       className={errors.password ? "error-input" : ""}
                       type="password"
                       placeholder="Nhập tên tiếng anh của học sinh"
+                      {...register("password")}
                     />
                     <div className="form-item-message">
                       <span className="error">
@@ -81,6 +93,7 @@ const FreeTrial: FC<FreeTrialProps> = () => {
                       className={errors.password ? "error-input" : ""}
                       type="password"
                       placeholder="Nhập tuổi của học sinh"
+                      {...register("age")}
                     />
                     <div className="form-item-message">
                       <span className="error">

@@ -1,0 +1,37 @@
+.profile_body{
+    padding: 10px 20px;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(
+      103deg,
+      rgb(235, 225, 188) 7.2%,
+      rgb(232, 188, 234) 57.5%,
+      rgb(203, 209, 244) 90.7%
+    );
+    background-repeat: no-repeat;
+}
+.profile_body_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+input {
+    text-indent: 13px;
+    padding: 13px;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: #5c606f;
+    background-color: #eeebf6;
+  }
